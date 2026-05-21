@@ -14,25 +14,19 @@
   --border:#1a2332;
   --accent:#00d4ff;
   --accent2:#0066ff;
-  --text:#c9d1d9;
-  --muted:#4a5568;
+  --text:#e8edf3;
+  --muted:#8b949e;
   --white:#e6edf3;
 }
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;cursor:none;}
-
-/* SCROLLBAR */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;cursor:none;} a,button{cursor:none;}
 
 /* CURSOR */
 .cursor{width:6px;height:6px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;box-shadow:0 0 10px var(--accent),0 0 20px var(--accent);}
 .cursor-ring{width:28px;height:28px;border:1px solid rgba(0,212,255,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all 0.12s ease;}
 
 /* CANVAS */
-#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none !important;}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(6,8,16,0.85);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
@@ -57,7 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .hero h1{font-size:clamp(40px,6vw,80px);font-weight:700;line-height:1.05;color:var(--white);opacity:0;animation:fadeUp 1s ease forwards 0.5s;letter-spacing:-1px;}
 .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--accent);filter:drop-shadow(0 0 12px rgba(0,212,255,0.4));}
 .hero h1 .glow{color:var(--accent);text-shadow:0 0 30px rgba(0,212,255,0.5);}
-.hero-sub{margin-top:28px;font-size:16px;color:var(--muted);line-height:1.8;max-width:520px;opacity:0;animation:fadeUp 1s ease forwards 0.7s;}
+.hero-sub{margin-top:28px;font-size:16px;color:#a0aab4;line-height:1.8;max-width:520px;opacity:0;animation:fadeUp 1s ease forwards 0.7s;}
 .hero-btns{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp 1s ease forwards 0.9s;}
 .btn-primary{background:transparent;color:var(--accent);padding:13px 28px;border-radius:4px;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:1px;border:1px solid var(--accent);box-shadow:0 0 15px rgba(0,212,255,0.2),inset 0 0 15px rgba(0,212,255,0.05);transition:all 0.3s;position:relative;overflow:hidden;}
 .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);transition:left 0.5s;}
@@ -79,7 +73,7 @@ section{padding:110px 48px;max-width:1200px;margin:auto;position:relative;z-inde
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start;}
-.about-text p{color:var(--muted);line-height:1.9;margin-bottom:20px;font-size:15px;}
+.about-text p{color:#a0aab4;line-height:1.9;margin-bottom:20px;font-size:15px;}
 .about-text p strong{color:var(--text);}
 .about-info{display:flex;flex-direction:column;gap:12px;margin-top:36px;}
 .info-item{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--muted);padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:6px;transition:all 0.3s;}
@@ -116,11 +110,11 @@ section{padding:110px 48px;max-width:1200px;margin:auto;position:relative;z-inde
 .project-card:hover::after{opacity:1;}
 .project-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:3px;margin-bottom:16px;}
 .project-card h3{font-size:18px;color:var(--white);margin-bottom:14px;font-weight:600;line-height:1.3;}
-.project-card p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:24px;}
+.project-card p{color:#a0aab4;font-size:13px;line-height:1.8;margin-bottom:24px;}
 .project-tech{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
 .tech-tag{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);padding:4px 10px;border-radius:3px;letter-spacing:1px;}
 .project-links{display:flex;gap:16px;}
-.project-link{text-decoration:none;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:6px;letter-spacing:1px;transition:color 0.3s;font-family:'Space Mono',monospace;}
+.project-link{text-decoration:none;color:var(--muted);position:relative;z-index:10;font-size:12px;display:flex;align-items:center;gap:6px;letter-spacing:1px;transition:color 0.3s;font-family:'Space Mono',monospace;}
 .project-link:hover{color:var(--accent);}
 
 /* RESEARCH */
@@ -129,7 +123,7 @@ section{padding:110px 48px;max-width:1200px;margin:auto;position:relative;z-inde
 .research-card:hover{border-color:rgba(0,212,255,0.25);}
 .research-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);color:var(--accent);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:3px;margin-bottom:24px;}
 .research-card h3{font-size:22px;color:var(--white);font-weight:600;line-height:1.4;margin-bottom:16px;}
-.research-card p{color:var(--muted);font-size:14px;line-height:1.9;margin-bottom:32px;}
+.research-card p{color:#a0aab4;font-size:14px;line-height:1.9;margin-bottom:32px;}
 .research-meta{display:flex;flex-wrap:wrap;gap:24px;}
 .meta-item{display:flex;flex-direction:column;gap:4px;}
 .meta-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
@@ -148,7 +142,7 @@ section{padding:110px 48px;max-width:1200px;margin:auto;position:relative;z-inde
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-.contact-text p{color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:36px;}
+.contact-text p{color:#a0aab4;font-size:15px;line-height:1.9;margin-bottom:36px;}
 .contact-links{display:flex;flex-direction:column;gap:12px;}
 .contact-link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text);font-size:13px;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:6px;transition:all 0.3s;font-family:'Space Mono',monospace;letter-spacing:0.5px;}
 .contact-link:hover{border-color:rgba(0,212,255,0.4);color:var(--accent);transform:translateX(6px);box-shadow:0 0 20px rgba(0,212,255,0.05);}
@@ -156,7 +150,7 @@ section{padding:110px 48px;max-width:1200px;margin:auto;position:relative;z-inde
 .contact-cta{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:40px;position:relative;overflow:hidden;}
 .contact-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);}
 .contact-cta h3{font-size:22px;color:var(--white);font-weight:600;margin-bottom:12px;}
-.contact-cta p{color:var(--muted);font-size:14px;margin-bottom:28px;line-height:1.8;}
+.contact-cta p{color:#a0aab4;font-size:14px;margin-bottom:28px;line-height:1.8;}
 .availability{display:flex;align-items:center;gap:10px;margin-top:20px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;}
 .dot-pulse{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 8px var(--accent);}50%{box-shadow:0 0 20px var(--accent),0 0 40px rgba(0,212,255,0.3);}}
@@ -209,7 +203,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:r
   <div class="hero-content">
     <div class="hero-tag">MCA Student · ML & Full Stack Developer</div>
     <h1>Shri Amarnath S<br><span class="outline">Building</span> <span class="glow">Real</span><br>Solutions.</h1>
-    <p class="hero-sub">I'm an eager learner exploring ML-powered apps and full stack systems to solve real problems — from predicting Tamil Nadu crop revenue to detecting deepfakes.</p>
+    <p class="hero-sub">I build ML-powered apps and full stack systems that solve real problems — from predicting Tamil Nadu crop revenue to detecting deepfakes at scale.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-secondary">Get In Touch</a>
@@ -230,8 +224,8 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:r
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm <strong>Shri Amarnath S</strong>, a 1st-year MCA student at <strong>St. Joseph's College (Autonomous), Tiruchirappalli</strong>. As an enthusiastic learner, I'm constantly exploring how to build things that solve real problems — whether that's helping Tamil Nadu farmers predict crop revenue or developing tools that scan resumes against job descriptions.</p>
-      <p>My journey sits at the intersection of <strong>Machine Learning</strong>, <strong>Full Stack Development</strong>, and <strong>Mobile Development</strong>. While I'm still expanding my knowledge and skills, I'm deeply committed to understanding how things work under the hood and writing clean code that just works.</p>
+      <p>I'm <strong>Shri Amarnath S</strong>, a 1st year MCA student at <strong>St. Joseph's College (Autonomous), Tiruchirappalli</strong>. I build things that solve real problems — whether that's helping Tamil Nadu farmers predict crop revenue or building tools that scan resumes against job descriptions.</p>
+      <p>My work sits at the intersection of <strong>Machine Learning</strong>, <strong>Full Stack Development</strong>, and <strong>Mobile Development</strong>. I believe the best engineering is invisible to the end user — it just works.</p>
       <p>Currently interning at <strong>Astonish Infotech, Tiruchirappalli</strong> as a Full Stack Developer. Previously published research on <strong>Deepfake Detection</strong> at an international conference.</p>
       <div class="about-info">
         <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Tiruchirappalli, Tamil Nadu, India</span></div>
@@ -326,7 +320,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:r
       <p>Conceptual VR retail framework presented at St. Joseph's College Pitch Fest 2026. Designed an immersive next-gen shopping experience using virtual reality.</p>
       <div class="project-tech"><span class="tech-tag">Concept</span><span class="tech-tag">VR</span><span class="tech-tag">Pitch Fest 2026</span></div>
       <div class="project-links">
-        <a href="#" class="project-link"><i class="fas fa-trophy"></i> AWARDED</a>
+        <a href="#" class="project-link"><i class="fas fa-certificate"></i> PARTICIPATED</a>
       </div>
     </div>
   </div>
@@ -372,8 +366,8 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:r
       <div class="ach-content"><h4>Published Research Paper</h4><p>Paper #142 published in IC-AIETS 2026 Conference Proceedings Volume 2, Pages 830–834.</p></div>
     </div>
     <div class="achievement-card reveal reveal-delay-2">
-      <div class="ach-icon"><i class="fas fa-lightbulb"></i></div>
-      <div class="ach-content"><h4>Pitch Fest 2026</h4><p>Awarded at St. Joseph's College Pitch Fest 2026 for VR Shopping Concept — a collaborative innovative pitch.</p></div>
+      <div class="ach-icon"><i class="fas fa-certificate"></i></div>
+      <div class="ach-content"><h4>Pitch Fest 2026 — Participant</h4><p>Presented at St. Joseph's College Pitch Fest 2026 — a collaborative VR retail concept for next-gen e-commerce.</p></div>
     </div>
     <div class="achievement-card reveal reveal-delay-3">
       <div class="ach-icon"><i class="fas fa-graduation-cap"></i></div>
